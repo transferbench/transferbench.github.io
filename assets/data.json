@@ -1,0 +1,102 @@
+{
+  "CIFAR10T": {
+    "standard": {
+      "hetero-pool": [
+        {"attack_name": "HETERO-cifar", "ASR": 1.0, "queries": 1990},
+        {"attack_name": "CIFAR$_t$", "ASR": 0.9967, "queries": 1262},
+        {"attack_name": "CW-$\\ell_\\infty$", "ASR": 1.0, "queries": 1514},
+        {"attack_name": "FAB", "ASR": 0.9999, "queries": 1992},
+        {"attack_name": "FMN-$\\ell_\\infty$", "ASR": 1.0, "queries": 2000},
+        {"attack_name": "PDPGD", "ASR": 1.0, "queries": 1940},
+        {"attack_name": "PGD", "ASR": 1.0, "queries": 1990},
+        {"attack_name": "tr", "ASR": 1.0, "queries": 24},
+        {"attack_name": "tr_adaptive", "ASR": 1.0, "queries": 25},
+        {"attack_name": "APGD", "ASR": 0.9966, "queries": 1897}
+      ],
+      "homeo-pool": [
+        {"attack_name": "homo-pool-cifar", "ASR": 1.0, "queries": 1990},
+        {"attack_name": "APGD$_t$", "ASR": 0.9967, "queries": 1262},
+        {"attack_name": "CW-$\\ell_\\infty$", "ASR": 1.0, "queries": 1514},
+        {"attack_name": "CIFAR", "ASR": 0.9999, "queries": 1992},
+        {"attack_name": "FMN-$\\ell_\\infty$", "ASR": 1.0, "queries": 2000},
+        {"attack_name": "PDPGD", "ASR": 1.0, "queries": 1940},
+        {"attack_name": "PGD", "ASR": 1.0, "queries": 1990},
+        {"attack_name": "tr", "ASR": 1.0, "queries": 24},
+        {"attack_name": "tr_adaptive", "ASR": 1.0, "queries": 25},
+        {"attack_name": "APGD", "ASR": 0.9966, "queries": 1897}
+      ],
+      "robust-pool": [
+        {"attack_name": "robust-pool-cifar", "ASR": 1.0, "queries": 1990},
+        {"attack_name": "CIFAR$_t$", "ASR": 0.9967, "queries": 1262},
+        {"attack_name": "CW-$\\ell_\\infty$", "ASR": 1.0, "queries": 1514},
+        {"attack_name": "FAB", "ASR": 0.9999, "queries": 1992},
+        {"attack_name": "FMN-$\\ell_\\infty$", "ASR": 1.0, "queries": 2000},
+        {"attack_name": "PDPGD", "ASR": 1.0, "queries": 1940},
+        {"attack_name": "PGD", "ASR": 1.0, "queries": 1990},
+        {"attack_name": "tr", "ASR": 1.0, "queries": 24},
+        {"attack_name": "tr_adaptive", "ASR": 1.0, "queries": 25},
+        {"attack_name": "APGD", "ASR": 0.9966, "queries": 1897}
+      ]
+    },
+    "WideResNet": {
+      "hetero-pool": [
+        {"attack_name": "HETERO-cifar", "ASR": 1.0, "queries": 1990},
+        {"attack_name": "CIFAR$_t$", "ASR": 0.9967, "queries": 1262},
+        {"attack_name": "CW-$\\ell_\\infty$", "ASR": 1.0, "queries": 1514}
+      ],
+      "homeo-pool": [
+        {"attack_name": "homo-pool-cifar", "ASR": 1.0, "queries": 1990},
+        {"attack_name": "APGD$_t$", "ASR": 0.9967, "queries": 1262}
+      ],
+      "robust-pool": [
+        {"attack_name": "robust-pool-cifar", "ASR": 1.0, "queries": 1990}
+      ]
+    }
+  },
+  "ImageNet": {
+    "standard": {
+      "hetero-pool": [
+        {"attack_name": "HETERO-imagenet", "ASR": 1.0, "queries": 1990},
+        {"attack_name": "APGD$_t$", "ASR": 0.9967, "queries": 1262},
+        {"attack_name": "CW-$\\ell_\\infty$", "ASR": 1.0, "queries": 1514},
+        {"attack_name": "FAB", "ASR": 0.9999, "queries": 1992},
+        {"attack_name": "FMN-$\\ell_\\infty$", "ASR": 1.0, "queries": 2000},
+        {"attack_name": "PDPGD", "ASR": 1.0, "queries": 1940},
+        {"attack_name": "PGD", "ASR": 1.0, "queries": 1990},
+        {"attack_name": "tr", "ASR": 1.0, "queries": 24},
+        {"attack_name": "tr_adaptive", "ASR": 1.0, "queries": 25},
+        {"attack_name": "APGD", "ASR": 0.9966, "queries": 1897}
+      ],
+      "homeo-pool": [
+        {"attack_name": "homo-pool-imagenet", "ASR": 1.0, "queries": 1990},
+        {"attack_name": "APGD$_t$", "ASR": 0.9967, "queries": 1262},
+        {"attack_name": "CW-$\\ell_\\infty$", "ASR": 1.0, "queries": 1514},
+        {"attack_name": "FAB", "ASR": 0.9999, "queries": 1992},
+        {"attack_name": "FMN-$\\ell_\\infty$", "ASR": 1.0, "queries": 2000},
+        {"attack_name": "PDPGD", "ASR": 1.0, "queries": 1940},
+        {"attack_name": "PGD", "ASR": 1.0, "queries": 1990},
+        {"attack_name": "tr", "ASR": 1.0, "queries": 24},
+        {"attack_name": "tr_adaptive", "ASR": 1.0, "queries": 25},
+        {"attack_name": "APGD", "ASR": 0.9966, "queries": 1897}
+      ],
+      "robust-pool": [
+        {"attack_name": "robust-pool-imagenet", "ASR": 1.0, "queries": 1990},
+        {"attack_name": "APGD$_t$", "ASR": 0.9967, "queries": 1262},
+        {"attack_name": "CW-$\\ell_\\infty$", "ASR": 1.0, "queries": 1514},
+        {"attack_name": "FAB", "ASR": 0.9999, "queries": 1992},
+        {"attack_name": "FMN-$\\ell_\\infty$", "ASR": 1.0, "queries": 2000},
+        {"attack_name": "PDPGD", "ASR": 1.0, "queries": 1940},
+        {"attack_name": "PGD", "ASR": 1.0, "queries": 1990},
+        {"attack_name": "tr", "ASR": 1.0, "queries": 24},
+        {"attack_name": "tr_adaptive", "ASR": 1.0, "queries": 25},
+        {"attack_name": "APGD", "ASR": 0.9966, "queries": 1897}
+      ]
+    },
+    "WideResNet": {
+      "robust-pool": [
+        {"attack_name": "robust-pool-imagenet", "ASR": 1.0, "queries": 1990},
+        {"attack_name": "APGD$_t$", "ASR": 0.9967, "queries": 1262}
+      ]
+    }
+  }
+}
