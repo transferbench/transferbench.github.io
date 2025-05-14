@@ -95,14 +95,6 @@
             </div>
         </div>
 
-
-        <div class="row captioned_img">
-            <div class="col-md-12">
-                <br>
-                <img src="assets/TransferBench.svg" alt="TransferBench" width="100%"/>
-                <div class="caption">Overview of <code>TransferBench</code>. Each attack is evaluated across diverse scenarios involving different surrogate pools and victim models. Attacks are then ranked based on their ability to achieve high success rates with fewer queries.</div>
-            </div>
-        </div>
         <hr class="divider" />
 
         <!-- SECTION ---------------------------------------------------------------------- -->
@@ -114,16 +106,16 @@
                 <p class="statlabel">Datasets</p>
             </div>
             <div class="col-md-3">
-                <p class="stat">Z</p>
+                <p class="stat">15</p>
                 <p class="statlabel">Attacks</p>
             </div>
             <div class="col-md-3">
-                <p class="stat">X</p>
-                <p class="statlabel">Victim Models</p>
+                <p class="stat">11</p>
+                <p class="statlabel">Target Models</p>
             </div>
             <div class="col-md-3">
-                <p class="stat">Y</p>
-                <p class="statlabel">Pools of Surrogate Models</p>
+                <p class="stat">6</p>
+                <p class="statlabel">Surrogate Pools</p>
             </div>
 
         </div>
@@ -215,46 +207,47 @@
         <hr class="divider" />
         <h2>Authors</h2>
         <br>
-        <p style="color:red">PLEASE CONSIDER AS RANDOM ORDER RIGHT NOW. JUST PLACEHOLDER</p>
         <div class="row authors">
             <div class="col-sm-3">
                 <h5 class="text-center"><a class="text-center" href="https://web.unica.it/unica/page/it/fabio_brau">Fabio Brau</a></h5>
                 <div class="text-center">University of Cagliari</div>
             </div>
+
             <div class="col-sm-3">
-                <h5 class="text-center"><a class="text-center" href="https://rubrica.unige.it/personale/UkJOXVpo">Antonio Emanuele Cinà</a></h5>
+              <h5 class="text-center"><a class="text-center" href="https://maurapintor.github.io">Maura Pintor</a></h5>
+              <div class="text-center">University of Cagliari</div>
+            </div>
+
+            <div class="col-sm-3">
+                <h5 class="text-center"><a class="text-center" href="https://cinofix.github.io">Antonio Emanuele Cinà</a></h5>
                 <div class="text-center">University of Genoa</div>
             </div>
 
             <div class="col-sm-3">
-                <h5 class="text-center"><a class="text-center" href="https://maurapintor.github.io">Maura Pintor</a></h5>
-                <div class="text-center">University of Cagliari</div>
-            </div>
-
-            <div class="col-sm-3">
-                <h5 class="text-center"><a class="text-center" href="https://maurapintor.github.io">Maura Pintor</a></h5>
+                <h5 class="text-center"><a class="text-center" href="https://sites.unica.it/pralab/raffaele-mura/?lang=it">Raffaele Mura</a></h5>
                 <div class="text-center">University of Cagliari</div>
             </div>
         </div>
         
         <div class="row authors">
             <div class="col-sm-3">
-                <h5 class="text-center"><a class="text-center" href="https://maurapintor.github.io">Maura Pintor</a></h5>
+                <h5 class="text-center"><a class="text-center" href="https://sites.unica.it/pralab/luca-scionis/?lang=it">Luca Scionis</a></h5>
                 <div class="text-center">University of Cagliari</div>
             </div>
 
             <div class="col-sm-3">
-                <h5 class="text-center"><a class="text-center" href="https://web.unica.it/unica/page/it/ambra_demontis">Ambra Demontis</a></h5>
+                <h5 class="text-center"><a class="text-center" href="https://www.lucaoneto.com/home">Luca Oneto</a></h5>
                 <div class="text-center">University of Cagliari</div>
             </div>
+
+            <div class="col-sm-3">
+              <h5 class="text-center"><a href="https://www.saiferlab.ai/people/fabioroli">Fabio Roli</a></h5>
+              <div class="text-center">University of Genoa</div>
+          </div>
+
             <div class="col-sm-3">
                 <h5 class="text-center"><a class="text-center" href="https://battistabiggio.github.io">Battista Biggio</a></h5>
                 <div class="text-center">University of Cagliari</div>
-            </div>
-
-            <div class="col-sm-3">
-                <h5 class="text-center"><a href="https://rubrica.unige.it/personale/U0tGWFhp">Fabio Roli</a></h5>
-                <div class="text-center">University of Genoa</div>
             </div>
         </div>
         <hr class="divider" />
@@ -448,7 +441,7 @@
         // initialize both benchmarks
         $(function(){
           initBenchmark({ prefix:'cifar',    dataKey:'CIFAR10T', jsonPath:'assets/data.json' });
-          initBenchmark({ prefix:'imagenet', dataKey:'ImageNet',  jsonPath:'assets/data.json' });
+          initBenchmark({ prefix:'imagenet', dataKey:'ImageNetT',  jsonPath:'assets/data.json' });
         });
         </script>
     

@@ -1,101 +1,1193 @@
 {
-  "CIFAR10T": {
-    "standard": {
-      "hetero-pool": [
-        {"attack_name": "HETERO-cifar", "ASR": 1.0, "queries": 1990},
-        {"attack_name": "CIFAR$_t$", "ASR": 0.9967, "queries": 1262},
-        {"attack_name": "CW-$\\ell_\\infty$", "ASR": 1.0, "queries": 1514},
-        {"attack_name": "FAB", "ASR": 0.9999, "queries": 1992},
-        {"attack_name": "FMN-$\\ell_\\infty$", "ASR": 1.0, "queries": 2000},
-        {"attack_name": "PDPGD", "ASR": 1.0, "queries": 1940},
-        {"attack_name": "PGD", "ASR": 1.0, "queries": 1990},
-        {"attack_name": "tr", "ASR": 1.0, "queries": 24},
-        {"attack_name": "tr_adaptive", "ASR": 1.0, "queries": 25},
-        {"attack_name": "APGD", "ASR": 0.9966, "queries": 1897}
+  "ImageNetT": {
+    "\\resnext{101}": {
+      "\\etero": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.29,
+          "queries": 12
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.06,
+          "queries": 0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.177,
+          "queries": 12
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.007,
+          "queries": 0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.055,
+          "queries": 7
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.001,
+          "queries": 17
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.008,
+          "queries": 0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.008,
+          "queries": 0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.318,
+          "queries": 9
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.308,
+          "queries": 12
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.692,
+          "queries": 0
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.077,
+          "queries": 0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.0,
+          "queries": null
+        }
       ],
-      "homeo-pool": [
-        {"attack_name": "homo-pool-cifar", "ASR": 1.0, "queries": 1990},
-        {"attack_name": "APGD$_t$", "ASR": 0.9967, "queries": 1262},
-        {"attack_name": "CW-$\\ell_\\infty$", "ASR": 1.0, "queries": 1514},
-        {"attack_name": "CIFAR", "ASR": 0.9999, "queries": 1992},
-        {"attack_name": "FMN-$\\ell_\\infty$", "ASR": 1.0, "queries": 2000},
-        {"attack_name": "PDPGD", "ASR": 1.0, "queries": 1940},
-        {"attack_name": "PGD", "ASR": 1.0, "queries": 1990},
-        {"attack_name": "tr", "ASR": 1.0, "queries": 24},
-        {"attack_name": "tr_adaptive", "ASR": 1.0, "queries": 25},
-        {"attack_name": "APGD", "ASR": 0.9966, "queries": 1897}
-      ],
-      "robust-pool": [
-        {"attack_name": "robust-pool-cifar", "ASR": 1.0, "queries": 1990},
-        {"attack_name": "CIFAR$_t$", "ASR": 0.9967, "queries": 1262},
-        {"attack_name": "CW-$\\ell_\\infty$", "ASR": 1.0, "queries": 1514},
-        {"attack_name": "FAB", "ASR": 0.9999, "queries": 1992},
-        {"attack_name": "FMN-$\\ell_\\infty$", "ASR": 1.0, "queries": 2000},
-        {"attack_name": "PDPGD", "ASR": 1.0, "queries": 1940},
-        {"attack_name": "PGD", "ASR": 1.0, "queries": 1990},
-        {"attack_name": "tr", "ASR": 1.0, "queries": 24},
-        {"attack_name": "tr_adaptive", "ASR": 1.0, "queries": 25},
-        {"attack_name": "APGD", "ASR": 0.9966, "queries": 1897}
+      "\\omeo": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.863,
+          "queries": 7
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.583,
+          "queries": 0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.835,
+          "queries": 6
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.221,
+          "queries": 0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.281,
+          "queries": 7
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.215,
+          "queries": 0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.215,
+          "queries": 0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.896,
+          "queries": 3
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.892,
+          "queries": 6
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.964,
+          "queries": 0
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.254,
+          "queries": 0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.0,
+          "queries": null
+        }
       ]
     },
-    "WideResNet": {
-      "hetero-pool": [
-        {"attack_name": "HETERO-cifar", "ASR": 1.0, "queries": 1990},
-        {"attack_name": "CIFAR$_t$", "ASR": 0.9967, "queries": 1262},
-        {"attack_name": "CW-$\\ell_\\infty$", "ASR": 1.0, "queries": 1514}
+    "\\vgg{19}": {
+      "\\etero": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.276,
+          "queries": 13
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.073,
+          "queries": 0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.135,
+          "queries": 10
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.018,
+          "queries": 0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.046,
+          "queries": 7
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.003,
+          "queries": 11
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.016,
+          "queries": 0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.015,
+          "queries": 0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.281,
+          "queries": 10
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.274,
+          "queries": 12
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.471,
+          "queries": 0
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.071,
+          "queries": 0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.001,
+          "queries": 6
+        }
       ],
-      "homeo-pool": [
-        {"attack_name": "homo-pool-cifar", "ASR": 1.0, "queries": 1990},
-        {"attack_name": "APGD$_t$", "ASR": 0.9967, "queries": 1262}
+      "\\omeo": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.793,
+          "queries": 8
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.225,
+          "queries": 0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.766,
+          "queries": 6
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.043,
+          "queries": 0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.395,
+          "queries": 7
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.002,
+          "queries": 26
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.055,
+          "queries": 0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.045,
+          "queries": 0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.81,
+          "queries": 4
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.808,
+          "queries": 7
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.463,
+          "queries": 0
+        },
+        {
+          "attack_name": "SMER",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.205,
+          "queries": 0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.001,
+          "queries": 38
+        }
+      ]
+    },
+    "\\vit{16}": {
+      "\\etero": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.045,
+          "queries": 15
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.017,
+          "queries": 0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.036,
+          "queries": 14
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.003,
+          "queries": 0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.02,
+          "queries": 8
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.001,
+          "queries": 39
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.003,
+          "queries": 0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.003,
+          "queries": 0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.046,
+          "queries": 14
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.055,
+          "queries": 15
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.124,
+          "queries": 0
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.031,
+          "queries": 0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.0,
+          "queries": null
+        }
       ],
-      "robust-pool": [
-        {"attack_name": "robust-pool-cifar", "ASR": 1.0, "queries": 1990}
+      "\\omeo": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.027,
+          "queries": 15
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.011,
+          "queries": 0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.033,
+          "queries": 10
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.012,
+          "queries": 8
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.003,
+          "queries": 10
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.003,
+          "queries": 0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.003,
+          "queries": 0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.017,
+          "queries": 19
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.027,
+          "queries": 16
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.337,
+          "queries": 0
+        },
+        {
+          "attack_name": "SMER",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.011,
+          "queries": 0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.001,
+          "queries": 1
+        }
+      ]
+    },
+    "\\amini": {
+      "\\robust": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "SMER",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.0,
+          "queries": null
+        }
+      ]
+    },
+    "\\mimir": {
+      "\\robust": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.0,
+          "queries": null
+        }
+      ]
+    },
+    "\\pubdef": {
+      "\\robust": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.546,
+          "queries": 11
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.29,
+          "queries": 0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.468,
+          "queries": 10
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.061,
+          "queries": 0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.13,
+          "queries": 7
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.005,
+          "queries": 11
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.064,
+          "queries": 0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.073,
+          "queries": 0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.557,
+          "queries": 9
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.564,
+          "queries": 10
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.598,
+          "queries": 0
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.14,
+          "queries": 0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.003,
+          "queries": 30
+        }
       ]
     }
   },
-  "ImageNet": {
-    "standard": {
-      "hetero-pool": [
-        {"attack_name": "HETERO-imagenet", "ASR": 1.0, "queries": 1990},
-        {"attack_name": "APGD$_t$", "ASR": 0.9967, "queries": 1262},
-        {"attack_name": "CW-$\\ell_\\infty$", "ASR": 1.0, "queries": 1514},
-        {"attack_name": "FAB", "ASR": 0.9999, "queries": 1992},
-        {"attack_name": "FMN-$\\ell_\\infty$", "ASR": 1.0, "queries": 2000},
-        {"attack_name": "PDPGD", "ASR": 1.0, "queries": 1940},
-        {"attack_name": "PGD", "ASR": 1.0, "queries": 1990},
-        {"attack_name": "tr", "ASR": 1.0, "queries": 24},
-        {"attack_name": "tr_adaptive", "ASR": 1.0, "queries": 25},
-        {"attack_name": "APGD", "ASR": 0.9966, "queries": 1897}
-      ],
-      "homeo-pool": [
-        {"attack_name": "homo-pool-imagenet", "ASR": 1.0, "queries": 1990},
-        {"attack_name": "APGD$_t$", "ASR": 0.9967, "queries": 1262},
-        {"attack_name": "CW-$\\ell_\\infty$", "ASR": 1.0, "queries": 1514},
-        {"attack_name": "FAB", "ASR": 0.9999, "queries": 1992},
-        {"attack_name": "FMN-$\\ell_\\infty$", "ASR": 1.0, "queries": 2000},
-        {"attack_name": "PDPGD", "ASR": 1.0, "queries": 1940},
-        {"attack_name": "PGD", "ASR": 1.0, "queries": 1990},
-        {"attack_name": "tr", "ASR": 1.0, "queries": 24},
-        {"attack_name": "tr_adaptive", "ASR": 1.0, "queries": 25},
-        {"attack_name": "APGD", "ASR": 0.9966, "queries": 1897}
-      ],
-      "robust-pool": [
-        {"attack_name": "robust-pool-imagenet", "ASR": 1.0, "queries": 1990},
-        {"attack_name": "APGD$_t$", "ASR": 0.9967, "queries": 1262},
-        {"attack_name": "CW-$\\ell_\\infty$", "ASR": 1.0, "queries": 1514},
-        {"attack_name": "FAB", "ASR": 0.9999, "queries": 1992},
-        {"attack_name": "FMN-$\\ell_\\infty$", "ASR": 1.0, "queries": 2000},
-        {"attack_name": "PDPGD", "ASR": 1.0, "queries": 1940},
-        {"attack_name": "PGD", "ASR": 1.0, "queries": 1990},
-        {"attack_name": "tr", "ASR": 1.0, "queries": 24},
-        {"attack_name": "tr_adaptive", "ASR": 1.0, "queries": 25},
-        {"attack_name": "APGD", "ASR": 0.9966, "queries": 1897}
+  "CIFAR10T": {
+    "\\bartoldson": {
+      "\\robust": [
+        {
+          "attack_name": "AdaEA",
+          "ASR": 0.011,
+          "queries": 0
+        },
+        {
+          "attack_name": "BASES",
+          "ASR": 0.018,
+          "queries": 2
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.017,
+          "queries": 0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.025,
+          "queries": 1
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.018,
+          "queries": 0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.023,
+          "queries": 4
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.022,
+          "queries": 3
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.016,
+          "queries": 0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.015,
+          "queries": 0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.018,
+          "queries": 6
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.019,
+          "queries": 2
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.019,
+          "queries": 0
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.014,
+          "queries": 0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.023,
+          "queries": 3
+        }
       ]
     },
-    "WideResNet": {
-      "robust-pool": [
-        {"attack_name": "robust-pool-imagenet", "ASR": 1.0, "queries": 1990},
-        {"attack_name": "APGD$_t$", "ASR": 0.9967, "queries": 1262}
+    "\\resnet{56}": {
+      "\\etero": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.996,
+          "queries": 2
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.979,
+          "queries": 0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.997,
+          "queries": 2
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.974,
+          "queries": 0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.692,
+          "queries": 6
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.269,
+          "queries": 11
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.979,
+          "queries": 0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.974,
+          "queries": 0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.995,
+          "queries": 1
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.995,
+          "queries": 2
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.988,
+          "queries": 0
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.985,
+          "queries": 0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.255,
+          "queries": 12
+        }
+      ],
+      "\\omeo": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.999,
+          "queries": 1
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.985,
+          "queries": 0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 1.0,
+          "queries": 1
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.972,
+          "queries": 0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.894,
+          "queries": 5
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.253,
+          "queries": 10
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.974,
+          "queries": 0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.969,
+          "queries": 0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.999,
+          "queries": 1
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.998,
+          "queries": 1
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.998,
+          "queries": 0
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.952,
+          "queries": 0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.273,
+          "queries": 50
+        }
+      ]
+    },
+    "\\vgg{19-bn}": {
+      "\\etero": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.986,
+          "queries": 2
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.935,
+          "queries": 0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.973,
+          "queries": 2
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.867,
+          "queries": 0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.772,
+          "queries": 6
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.182,
+          "queries": 9
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.847,
+          "queries": 0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.843,
+          "queries": 0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.987,
+          "queries": 2
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.983,
+          "queries": 2
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.975,
+          "queries": 0
+        },
+        {
+          "attack_name": "SMER",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.927,
+          "queries": 0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.183,
+          "queries": 10
+        }
+      ],
+      "\\omeo": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.994,
+          "queries": 2
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.978,
+          "queries": 0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.998,
+          "queries": 2
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.983,
+          "queries": 0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.652,
+          "queries": 6
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.198,
+          "queries": 9
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.985,
+          "queries": 0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.988,
+          "queries": 0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.996,
+          "queries": 1
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.997,
+          "queries": 2
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.992,
+          "queries": 0
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.99,
+          "queries": 0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.183,
+          "queries": 7
+        }
+      ]
+    },
+    "\\vit{16}": {
+      "\\etero": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.73,
+          "queries": 6
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.602,
+          "queries": 0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.76,
+          "queries": 4
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.402,
+          "queries": 0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.557,
+          "queries": 6
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.093,
+          "queries": 14
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.36,
+          "queries": 0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.355,
+          "queries": 0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.737,
+          "queries": 5
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.739,
+          "queries": 5
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.718,
+          "queries": 0
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.563,
+          "queries": 0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.093,
+          "queries": 15
+        }
+      ]
+    },
+    "\\beit{16}": {
+      "\\omeo": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.999,
+          "queries": 2
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.99,
+          "queries": 0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.998,
+          "queries": 1
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.936,
+          "queries": 0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.769,
+          "queries": 6
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.227,
+          "queries": 12
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.934,
+          "queries": 0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.93,
+          "queries": 0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.996,
+          "queries": 1
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.999,
+          "queries": 2
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.99,
+          "queries": 0
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.983,
+          "queries": 0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.191,
+          "queries": 16
+        }
+      ]
+    },
+    "\\peng": {
+      "\\robust": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.019,
+          "queries": 2
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.016,
+          "queries": 0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.024,
+          "queries": 2
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.013,
+          "queries": 0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.02,
+          "queries": 3
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.019,
+          "queries": 3
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.017,
+          "queries": 0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.014,
+          "queries": 0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.018,
+          "queries": 5
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.019,
+          "queries": 1
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 0.018,
+          "queries": 0
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 0.021,
+          "queries": 0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.019,
+          "queries": 4
+        }
       ]
     }
   }
