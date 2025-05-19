@@ -1,1192 +1,1167 @@
 {
-  "ImageNetT": {
-    "\\resnext{101}": {
-      "\\etero": [
+  "CIFAR10T": {
+    "ResNet-56": {
+      "HeS": [
         {
           "attack_name": "BASES",
-          "ASR": 0.29,
-          "queries": 12
+          "ASR": 99.6,
+          "queries": 1.9
         },
         {
           "attack_name": "CWA",
-          "ASR": 0.06,
-          "queries": 0
+          "ASR": 97.9,
+          "queries": 0.0
         },
         {
           "attack_name": "DSWEA",
-          "ASR": 0.177,
-          "queries": 12
+          "ASR": 99.7,
+          "queries": 1.9
         },
         {
           "attack_name": "ENS",
-          "ASR": 0.007,
-          "queries": 0
+          "ASR": 97.4,
+          "queries": 0.0
         },
         {
           "attack_name": "GAA",
-          "ASR": 0.055,
-          "queries": 7
+          "ASR": 69.2,
+          "queries": 5.9
         },
         {
           "attack_name": "GFCS",
-          "ASR": 0.001,
-          "queries": 17
+          "ASR": 26.9,
+          "queries": 11.3
         },
         {
           "attack_name": "LGV",
-          "ASR": 0.008,
-          "queries": 0
+          "ASR": 97.9,
+          "queries": 0.0
         },
         {
           "attack_name": "MBA",
-          "ASR": 0.008,
-          "queries": 0
+          "ASR": 97.4,
+          "queries": 0.0
         },
         {
           "attack_name": "NaiveAvg",
-          "ASR": 0.318,
-          "queries": 9
+          "ASR": 99.5,
+          "queries": 1.1
         },
         {
           "attack_name": "NaiveAvg10",
-          "ASR": 0.308,
-          "queries": 12
+          "ASR": 99.5,
+          "queries": 1.6
         },
         {
           "attack_name": "SASD_WS",
-          "ASR": 0.692,
-          "queries": 0
+          "ASR": 98.8,
+          "queries": 0.0
         },
         {
           "attack_name": "SVRE",
-          "ASR": 0.077,
-          "queries": 0
+          "ASR": 98.5,
+          "queries": 0.0
         },
         {
           "attack_name": "SimbaODS",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 25.5,
+          "queries": 11.7
         }
       ],
-      "\\omeo": [
+      "HoS": [
         {
           "attack_name": "BASES",
-          "ASR": 0.863,
-          "queries": 7
+          "ASR": 99.9,
+          "queries": 1.2
         },
         {
           "attack_name": "CWA",
-          "ASR": 0.583,
-          "queries": 0
+          "ASR": 98.5,
+          "queries": 0.0
         },
         {
           "attack_name": "DSWEA",
-          "ASR": 0.835,
-          "queries": 6
+          "ASR": 100.0,
+          "queries": 1.2
         },
         {
           "attack_name": "ENS",
-          "ASR": 0.221,
-          "queries": 0
+          "ASR": 97.2,
+          "queries": 0.0
         },
         {
           "attack_name": "GAA",
-          "ASR": 0.281,
-          "queries": 7
+          "ASR": 89.4,
+          "queries": 5.1
         },
         {
           "attack_name": "GFCS",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 25.3,
+          "queries": 10.2
         },
         {
           "attack_name": "LGV",
-          "ASR": 0.215,
-          "queries": 0
+          "ASR": 97.4,
+          "queries": 0.0
         },
         {
           "attack_name": "MBA",
-          "ASR": 0.215,
-          "queries": 0
+          "ASR": 96.9,
+          "queries": 0.0
         },
         {
           "attack_name": "NaiveAvg",
-          "ASR": 0.896,
-          "queries": 3
+          "ASR": 99.9,
+          "queries": 1.1
         },
         {
           "attack_name": "NaiveAvg10",
-          "ASR": 0.892,
-          "queries": 6
+          "ASR": 99.8,
+          "queries": 1.2
         },
         {
           "attack_name": "SASD_WS",
-          "ASR": 0.964,
-          "queries": 0
+          "ASR": 99.8,
+          "queries": 0.0
         },
         {
           "attack_name": "SVRE",
-          "ASR": 0.254,
-          "queries": 0
+          "ASR": 95.2,
+          "queries": 0.0
         },
         {
           "attack_name": "SimbaODS",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 27.3,
+          "queries": 50.0
         }
       ]
     },
-    "\\vgg{19}": {
-      "\\etero": [
+    "VGG-19-bn": {
+      "HeS": [
         {
           "attack_name": "BASES",
-          "ASR": 0.276,
-          "queries": 13
+          "ASR": 98.6,
+          "queries": 1.9
         },
         {
           "attack_name": "CWA",
-          "ASR": 0.073,
-          "queries": 0
+          "ASR": 93.5,
+          "queries": 0.0
         },
         {
           "attack_name": "DSWEA",
-          "ASR": 0.135,
-          "queries": 10
+          "ASR": 97.3,
+          "queries": 2.1
         },
         {
           "attack_name": "ENS",
-          "ASR": 0.018,
-          "queries": 0
+          "ASR": 86.7,
+          "queries": 0.0
         },
         {
           "attack_name": "GAA",
-          "ASR": 0.046,
-          "queries": 7
+          "ASR": 77.2,
+          "queries": 5.6
         },
         {
           "attack_name": "GFCS",
-          "ASR": 0.003,
-          "queries": 11
+          "ASR": 18.2,
+          "queries": 8.9
         },
         {
           "attack_name": "LGV",
-          "ASR": 0.016,
-          "queries": 0
+          "ASR": 84.7,
+          "queries": 0.0
         },
         {
           "attack_name": "MBA",
-          "ASR": 0.015,
-          "queries": 0
+          "ASR": 84.3,
+          "queries": 0.0
         },
         {
           "attack_name": "NaiveAvg",
-          "ASR": 0.281,
-          "queries": 10
+          "ASR": 98.7,
+          "queries": 1.8
         },
         {
           "attack_name": "NaiveAvg10",
-          "ASR": 0.274,
-          "queries": 12
+          "ASR": 98.3,
+          "queries": 1.9
         },
         {
           "attack_name": "SASD_WS",
-          "ASR": 0.471,
-          "queries": 0
+          "ASR": 97.5,
+          "queries": 0.0
         },
         {
           "attack_name": "SVRE",
-          "ASR": 0.071,
-          "queries": 0
+          "ASR": 92.7,
+          "queries": 0.0
         },
         {
           "attack_name": "SimbaODS",
-          "ASR": 0.001,
-          "queries": 6
+          "ASR": 18.3,
+          "queries": 9.7
         }
       ],
-      "\\omeo": [
+      "HoS": [
         {
           "attack_name": "BASES",
-          "ASR": 0.793,
-          "queries": 8
+          "ASR": 99.4,
+          "queries": 2.1
         },
         {
           "attack_name": "CWA",
-          "ASR": 0.225,
-          "queries": 0
+          "ASR": 97.8,
+          "queries": 0.0
         },
         {
           "attack_name": "DSWEA",
-          "ASR": 0.766,
-          "queries": 6
+          "ASR": 99.8,
+          "queries": 1.8
         },
         {
           "attack_name": "ENS",
-          "ASR": 0.043,
-          "queries": 0
+          "ASR": 98.3,
+          "queries": 0.0
         },
         {
           "attack_name": "GAA",
-          "ASR": 0.395,
-          "queries": 7
+          "ASR": 65.2,
+          "queries": 5.7
         },
         {
           "attack_name": "GFCS",
-          "ASR": 0.002,
-          "queries": 26
+          "ASR": 19.8,
+          "queries": 9.3
         },
         {
           "attack_name": "LGV",
-          "ASR": 0.055,
-          "queries": 0
+          "ASR": 98.5,
+          "queries": 0.0
         },
         {
           "attack_name": "MBA",
-          "ASR": 0.045,
-          "queries": 0
+          "ASR": 98.8,
+          "queries": 0.0
         },
         {
           "attack_name": "NaiveAvg",
-          "ASR": 0.81,
-          "queries": 4
+          "ASR": 99.6,
+          "queries": 1.1
         },
         {
           "attack_name": "NaiveAvg10",
-          "ASR": 0.808,
-          "queries": 7
+          "ASR": 99.7,
+          "queries": 1.8
         },
         {
           "attack_name": "SASD_WS",
-          "ASR": 0.463,
-          "queries": 0
-        },
-        {
-          "attack_name": "SMER",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 99.2,
+          "queries": 0.0
         },
         {
           "attack_name": "SVRE",
-          "ASR": 0.205,
-          "queries": 0
+          "ASR": 99.0,
+          "queries": 0.0
         },
         {
           "attack_name": "SimbaODS",
-          "ASR": 0.001,
-          "queries": 38
+          "ASR": 18.3,
+          "queries": 7.2
         }
       ]
     },
-    "\\vit{16}": {
-      "\\etero": [
+    "ViT-B/16": {
+      "HeS": [
         {
           "attack_name": "BASES",
-          "ASR": 0.045,
-          "queries": 15
+          "ASR": 73.0,
+          "queries": 5.6
         },
         {
           "attack_name": "CWA",
-          "ASR": 0.017,
-          "queries": 0
+          "ASR": 60.2,
+          "queries": 0.0
         },
         {
           "attack_name": "DSWEA",
-          "ASR": 0.036,
-          "queries": 14
+          "ASR": 76.0,
+          "queries": 3.6
         },
         {
           "attack_name": "ENS",
-          "ASR": 0.003,
-          "queries": 0
+          "ASR": 40.2,
+          "queries": 0.0
         },
         {
           "attack_name": "GAA",
-          "ASR": 0.02,
-          "queries": 8
+          "ASR": 55.7,
+          "queries": 6.1
         },
         {
           "attack_name": "GFCS",
-          "ASR": 0.001,
-          "queries": 39
+          "ASR": 9.3,
+          "queries": 14.2
         },
         {
           "attack_name": "LGV",
-          "ASR": 0.003,
-          "queries": 0
+          "ASR": 36.0,
+          "queries": 0.0
         },
         {
           "attack_name": "MBA",
-          "ASR": 0.003,
-          "queries": 0
+          "ASR": 35.5,
+          "queries": 0.0
         },
         {
           "attack_name": "NaiveAvg",
-          "ASR": 0.046,
-          "queries": 14
+          "ASR": 73.7,
+          "queries": 4.9
         },
         {
           "attack_name": "NaiveAvg10",
-          "ASR": 0.055,
-          "queries": 15
+          "ASR": 73.9,
+          "queries": 5.4
         },
         {
           "attack_name": "SASD_WS",
-          "ASR": 0.124,
-          "queries": 0
+          "ASR": 71.8,
+          "queries": 0.0
         },
         {
           "attack_name": "SVRE",
-          "ASR": 0.031,
-          "queries": 0
+          "ASR": 56.3,
+          "queries": 0.0
         },
         {
           "attack_name": "SimbaODS",
-          "ASR": 0.0,
-          "queries": null
-        }
-      ],
-      "\\omeo": [
-        {
-          "attack_name": "BASES",
-          "ASR": 0.027,
-          "queries": 15
-        },
-        {
-          "attack_name": "CWA",
-          "ASR": 0.011,
-          "queries": 0
-        },
-        {
-          "attack_name": "DSWEA",
-          "ASR": 0.033,
-          "queries": 10
-        },
-        {
-          "attack_name": "ENS",
-          "ASR": 0.0,
-          "queries": null
-        },
-        {
-          "attack_name": "GAA",
-          "ASR": 0.012,
-          "queries": 8
-        },
-        {
-          "attack_name": "GFCS",
-          "ASR": 0.003,
-          "queries": 10
-        },
-        {
-          "attack_name": "LGV",
-          "ASR": 0.003,
-          "queries": 0
-        },
-        {
-          "attack_name": "MBA",
-          "ASR": 0.003,
-          "queries": 0
-        },
-        {
-          "attack_name": "NaiveAvg",
-          "ASR": 0.017,
-          "queries": 19
-        },
-        {
-          "attack_name": "NaiveAvg10",
-          "ASR": 0.027,
-          "queries": 16
-        },
-        {
-          "attack_name": "SASD_WS",
-          "ASR": 0.337,
-          "queries": 0
-        },
-        {
-          "attack_name": "SMER",
-          "ASR": 0.0,
-          "queries": null
-        },
-        {
-          "attack_name": "SVRE",
-          "ASR": 0.011,
-          "queries": 0
-        },
-        {
-          "attack_name": "SimbaODS",
-          "ASR": 0.001,
-          "queries": 1
+          "ASR": 9.3,
+          "queries": 14.5
         }
       ]
     },
-    "\\amini": {
-      "\\robust": [
+    "BeIT-B/16": {
+      "HoS": [
         {
           "attack_name": "BASES",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 99.9,
+          "queries": 1.8
         },
         {
           "attack_name": "CWA",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 99.0,
+          "queries": 0.0
         },
         {
           "attack_name": "DSWEA",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 99.8,
+          "queries": 1.5
         },
         {
           "attack_name": "ENS",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 93.6,
+          "queries": 0.0
         },
         {
           "attack_name": "GAA",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 76.9,
+          "queries": 5.7
         },
         {
           "attack_name": "GFCS",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 22.7,
+          "queries": 12.3
         },
         {
           "attack_name": "LGV",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 93.4,
+          "queries": 0.0
         },
         {
           "attack_name": "MBA",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 93.0,
+          "queries": 0.0
         },
         {
           "attack_name": "NaiveAvg",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 99.6,
+          "queries": 1.2
         },
         {
           "attack_name": "NaiveAvg10",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 99.9,
+          "queries": 1.6
         },
         {
           "attack_name": "SASD_WS",
-          "ASR": 0.0,
-          "queries": null
-        },
-        {
-          "attack_name": "SMER",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 99.0,
+          "queries": 0.0
         },
         {
           "attack_name": "SVRE",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 98.3,
+          "queries": 0.0
         },
         {
           "attack_name": "SimbaODS",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 19.1,
+          "queries": 15.9
         }
       ]
     },
-    "\\mimir": {
-      "\\robust": [
+    "Barto-WRN-94": {
+      "HoS+R": [
         {
           "attack_name": "BASES",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 1.8,
+          "queries": 2.1
         },
         {
           "attack_name": "CWA",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 1.7,
+          "queries": 0.0
         },
         {
           "attack_name": "DSWEA",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 2.5,
+          "queries": 1.1
         },
         {
           "attack_name": "ENS",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 1.8,
+          "queries": 0.0
         },
         {
           "attack_name": "GAA",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 2.3,
+          "queries": 3.5
         },
         {
           "attack_name": "GFCS",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 2.2,
+          "queries": 2.9
         },
         {
           "attack_name": "LGV",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 1.6,
+          "queries": 0.0
         },
         {
           "attack_name": "MBA",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 1.5,
+          "queries": 0.0
         },
         {
           "attack_name": "NaiveAvg",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 1.8,
+          "queries": 5.7
         },
         {
           "attack_name": "NaiveAvg10",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 1.9,
+          "queries": 1.8
         },
         {
           "attack_name": "SASD_WS",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 1.9,
+          "queries": 0.0
         },
         {
           "attack_name": "SVRE",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 1.4,
+          "queries": 0.0
         },
         {
           "attack_name": "SimbaODS",
-          "ASR": 0.0,
-          "queries": null
+          "ASR": 2.3,
+          "queries": 3.2
         }
       ]
     },
-    "\\pubdef": {
-      "\\robust": [
+    "Peng-RW-RN-70": {
+      "HoS+R": [
         {
           "attack_name": "BASES",
-          "ASR": 0.546,
-          "queries": 11
+          "ASR": 1.9,
+          "queries": 1.7
         },
         {
           "attack_name": "CWA",
-          "ASR": 0.29,
-          "queries": 0
+          "ASR": 1.6,
+          "queries": 0.0
         },
         {
           "attack_name": "DSWEA",
-          "ASR": 0.468,
-          "queries": 10
+          "ASR": 2.4,
+          "queries": 2.1
         },
         {
           "attack_name": "ENS",
-          "ASR": 0.061,
-          "queries": 0
+          "ASR": 1.3,
+          "queries": 0.0
         },
         {
           "attack_name": "GAA",
-          "ASR": 0.13,
-          "queries": 7
+          "ASR": 2.0,
+          "queries": 2.8
         },
         {
           "attack_name": "GFCS",
-          "ASR": 0.005,
-          "queries": 11
+          "ASR": 1.9,
+          "queries": 3.5
         },
         {
           "attack_name": "LGV",
-          "ASR": 0.064,
-          "queries": 0
+          "ASR": 1.7,
+          "queries": 0.0
         },
         {
           "attack_name": "MBA",
-          "ASR": 0.073,
-          "queries": 0
+          "ASR": 1.4,
+          "queries": 0.0
         },
         {
           "attack_name": "NaiveAvg",
-          "ASR": 0.557,
-          "queries": 9
+          "ASR": 1.8,
+          "queries": 4.6
         },
         {
           "attack_name": "NaiveAvg10",
-          "ASR": 0.564,
-          "queries": 10
+          "ASR": 1.9,
+          "queries": 1.0
         },
         {
           "attack_name": "SASD_WS",
-          "ASR": 0.598,
-          "queries": 0
+          "ASR": 1.8,
+          "queries": 0.0
         },
         {
           "attack_name": "SVRE",
-          "ASR": 0.14,
-          "queries": 0
+          "ASR": 2.1,
+          "queries": 0.0
         },
         {
           "attack_name": "SimbaODS",
-          "ASR": 0.003,
-          "queries": 30
+          "ASR": 1.9,
+          "queries": 3.9
         }
       ]
     }
   },
-  "CIFAR10T": {
-    "\\bartoldson": {
-      "\\robust": [
-        {
-          "attack_name": "AdaEA",
-          "ASR": 0.011,
-          "queries": 0
-        },
+  "ImageNetT": {
+    "ResNeXt-101": {
+      "HeS": [
         {
           "attack_name": "BASES",
-          "ASR": 0.018,
-          "queries": 2
+          "ASR": 29.0,
+          "queries": 11.9
         },
         {
           "attack_name": "CWA",
-          "ASR": 0.017,
-          "queries": 0
+          "ASR": 6.0,
+          "queries": 0.0
         },
         {
           "attack_name": "DSWEA",
-          "ASR": 0.025,
-          "queries": 1
+          "ASR": 17.7,
+          "queries": 12.1
         },
         {
           "attack_name": "ENS",
-          "ASR": 0.018,
-          "queries": 0
+          "ASR": 0.7,
+          "queries": 0.0
         },
         {
           "attack_name": "GAA",
-          "ASR": 0.023,
-          "queries": 4
+          "ASR": 5.5,
+          "queries": 7.2
         },
         {
           "attack_name": "GFCS",
-          "ASR": 0.022,
-          "queries": 3
+          "ASR": 0.1,
+          "queries": 17.0
         },
         {
           "attack_name": "LGV",
-          "ASR": 0.016,
-          "queries": 0
+          "ASR": 0.8,
+          "queries": 0.0
         },
         {
           "attack_name": "MBA",
-          "ASR": 0.015,
-          "queries": 0
+          "ASR": 0.8,
+          "queries": 0.0
         },
         {
           "attack_name": "NaiveAvg",
-          "ASR": 0.018,
-          "queries": 6
+          "ASR": 31.8,
+          "queries": 9.1
         },
         {
           "attack_name": "NaiveAvg10",
-          "ASR": 0.019,
-          "queries": 2
+          "ASR": 30.8,
+          "queries": 11.8
         },
         {
           "attack_name": "SASD_WS",
-          "ASR": 0.019,
-          "queries": 0
+          "ASR": 69.2,
+          "queries": 0.0
         },
         {
           "attack_name": "SVRE",
-          "ASR": 0.014,
-          "queries": 0
+          "ASR": 7.7,
+          "queries": 0.0
         },
         {
           "attack_name": "SimbaODS",
-          "ASR": 0.023,
-          "queries": 3
-        }
-      ]
-    },
-    "\\resnet{56}": {
-      "\\etero": [
-        {
-          "attack_name": "BASES",
-          "ASR": 0.996,
-          "queries": 2
-        },
-        {
-          "attack_name": "CWA",
-          "ASR": 0.979,
-          "queries": 0
-        },
-        {
-          "attack_name": "DSWEA",
-          "ASR": 0.997,
-          "queries": 2
-        },
-        {
-          "attack_name": "ENS",
-          "ASR": 0.974,
-          "queries": 0
-        },
-        {
-          "attack_name": "GAA",
-          "ASR": 0.692,
-          "queries": 6
-        },
-        {
-          "attack_name": "GFCS",
-          "ASR": 0.269,
-          "queries": 11
-        },
-        {
-          "attack_name": "LGV",
-          "ASR": 0.979,
-          "queries": 0
-        },
-        {
-          "attack_name": "MBA",
-          "ASR": 0.974,
-          "queries": 0
-        },
-        {
-          "attack_name": "NaiveAvg",
-          "ASR": 0.995,
-          "queries": 1
-        },
-        {
-          "attack_name": "NaiveAvg10",
-          "ASR": 0.995,
-          "queries": 2
-        },
-        {
-          "attack_name": "SASD_WS",
-          "ASR": 0.988,
-          "queries": 0
-        },
-        {
-          "attack_name": "SVRE",
-          "ASR": 0.985,
-          "queries": 0
-        },
-        {
-          "attack_name": "SimbaODS",
-          "ASR": 0.255,
-          "queries": 12
+          "ASR": 0.0,
+          "queries": null
         }
       ],
-      "\\omeo": [
+      "HoS": [
         {
           "attack_name": "BASES",
-          "ASR": 0.999,
-          "queries": 1
+          "ASR": 86.3,
+          "queries": 7.4
         },
         {
           "attack_name": "CWA",
-          "ASR": 0.985,
-          "queries": 0
+          "ASR": 58.3,
+          "queries": 0.0
         },
         {
           "attack_name": "DSWEA",
-          "ASR": 1.0,
-          "queries": 1
+          "ASR": 83.5,
+          "queries": 6.2
         },
         {
           "attack_name": "ENS",
-          "ASR": 0.972,
-          "queries": 0
+          "ASR": 22.1,
+          "queries": 0.0
         },
         {
           "attack_name": "GAA",
-          "ASR": 0.894,
-          "queries": 5
+          "ASR": 28.1,
+          "queries": 7.3
         },
         {
           "attack_name": "GFCS",
-          "ASR": 0.253,
-          "queries": 10
+          "ASR": 0.0,
+          "queries": null
         },
         {
           "attack_name": "LGV",
-          "ASR": 0.974,
-          "queries": 0
+          "ASR": 21.5,
+          "queries": 0.0
         },
         {
           "attack_name": "MBA",
-          "ASR": 0.969,
-          "queries": 0
+          "ASR": 21.5,
+          "queries": 0.0
         },
         {
           "attack_name": "NaiveAvg",
-          "ASR": 0.999,
-          "queries": 1
+          "ASR": 89.6,
+          "queries": 3.4
         },
         {
           "attack_name": "NaiveAvg10",
-          "ASR": 0.998,
-          "queries": 1
+          "ASR": 89.2,
+          "queries": 6.4
         },
         {
           "attack_name": "SASD_WS",
-          "ASR": 0.998,
-          "queries": 0
+          "ASR": 96.4,
+          "queries": 0.0
         },
         {
           "attack_name": "SVRE",
-          "ASR": 0.952,
-          "queries": 0
+          "ASR": 25.4,
+          "queries": 0.0
         },
         {
           "attack_name": "SimbaODS",
-          "ASR": 0.273,
-          "queries": 50
+          "ASR": 0.0,
+          "queries": null
         }
       ]
     },
-    "\\vgg{19-bn}": {
-      "\\etero": [
+    "VGG-19": {
+      "HeS": [
         {
           "attack_name": "BASES",
-          "ASR": 0.986,
-          "queries": 2
+          "ASR": 27.6,
+          "queries": 12.7
         },
         {
           "attack_name": "CWA",
-          "ASR": 0.935,
-          "queries": 0
+          "ASR": 7.3,
+          "queries": 0.0
         },
         {
           "attack_name": "DSWEA",
-          "ASR": 0.973,
-          "queries": 2
+          "ASR": 13.5,
+          "queries": 10.0
         },
         {
           "attack_name": "ENS",
-          "ASR": 0.867,
-          "queries": 0
+          "ASR": 1.8,
+          "queries": 0.0
         },
         {
           "attack_name": "GAA",
-          "ASR": 0.772,
-          "queries": 6
+          "ASR": 4.6,
+          "queries": 6.9
         },
         {
           "attack_name": "GFCS",
-          "ASR": 0.182,
-          "queries": 9
+          "ASR": 0.3,
+          "queries": 10.7
         },
         {
           "attack_name": "LGV",
-          "ASR": 0.847,
-          "queries": 0
+          "ASR": 1.6,
+          "queries": 0.0
         },
         {
           "attack_name": "MBA",
-          "ASR": 0.843,
-          "queries": 0
+          "ASR": 1.5,
+          "queries": 0.0
         },
         {
           "attack_name": "NaiveAvg",
-          "ASR": 0.987,
-          "queries": 2
+          "ASR": 28.1,
+          "queries": 9.8
         },
         {
           "attack_name": "NaiveAvg10",
-          "ASR": 0.983,
-          "queries": 2
+          "ASR": 27.4,
+          "queries": 11.5
         },
         {
           "attack_name": "SASD_WS",
-          "ASR": 0.975,
-          "queries": 0
+          "ASR": 47.1,
+          "queries": 0.0
         },
         {
-          "attack_name": "SMER",
+          "attack_name": "SVRE",
+          "ASR": 7.1,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.1,
+          "queries": 6.0
+        }
+      ],
+      "HoS": [
+        {
+          "attack_name": "BASES",
+          "ASR": 79.3,
+          "queries": 8.0
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 22.5,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 76.6,
+          "queries": 5.9
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 4.3,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 39.5,
+          "queries": 7.1
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.2,
+          "queries": 26.0
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 5.5,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 4.5,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 81.0,
+          "queries": 4.2
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 80.8,
+          "queries": 7.2
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 46.3,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 20.5,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.1,
+          "queries": 38.0
+        }
+      ]
+    },
+    "ViT-B/16": {
+      "HeS": [
+        {
+          "attack_name": "BASES",
+          "ASR": 4.5,
+          "queries": 15.3
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 1.7,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 3.6,
+          "queries": 14.4
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.3,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 2.0,
+          "queries": 7.8
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.1,
+          "queries": 39.0
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.3,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.3,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 4.6,
+          "queries": 14.2
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 5.5,
+          "queries": 14.8
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 12.4,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 3.1,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.0,
+          "queries": null
+        }
+      ],
+      "HoS": [
+        {
+          "attack_name": "BASES",
+          "ASR": 2.7,
+          "queries": 15.3
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 1.1,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 3.3,
+          "queries": 10.4
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 1.2,
+          "queries": 7.5
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.3,
+          "queries": 10.3
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.3,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.3,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 1.7,
+          "queries": 18.6
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 2.7,
+          "queries": 15.9
+        },
+        {
+          "attack_name": "SASD_WS",
+          "ASR": 33.7,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "SVRE",
+          "ASR": 1.1,
+          "queries": 0.0
+        },
+        {
+          "attack_name": "SimbaODS",
+          "ASR": 0.1,
+          "queries": 1.0
+        }
+      ]
+    },
+    "Amini-Sw-L": {
+      "HoS+R": [
+        {
+          "attack_name": "BASES",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "CWA",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "DSWEA",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "ENS",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "GAA",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "GFCS",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "LGV",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "MBA",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "NaiveAvg",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "NaiveAvg10",
+          "ASR": 0.0,
+          "queries": null
+        },
+        {
+          "attack_name": "SASD_WS",
           "ASR": 0.0,
           "queries": null
         },
         {
           "attack_name": "SVRE",
-          "ASR": 0.927,
-          "queries": 0
+          "ASR": 0.0,
+          "queries": null
         },
         {
           "attack_name": "SimbaODS",
-          "ASR": 0.183,
-          "queries": 10
-        }
-      ],
-      "\\omeo": [
-        {
-          "attack_name": "BASES",
-          "ASR": 0.994,
-          "queries": 2
-        },
-        {
-          "attack_name": "CWA",
-          "ASR": 0.978,
-          "queries": 0
-        },
-        {
-          "attack_name": "DSWEA",
-          "ASR": 0.998,
-          "queries": 2
-        },
-        {
-          "attack_name": "ENS",
-          "ASR": 0.983,
-          "queries": 0
-        },
-        {
-          "attack_name": "GAA",
-          "ASR": 0.652,
-          "queries": 6
-        },
-        {
-          "attack_name": "GFCS",
-          "ASR": 0.198,
-          "queries": 9
-        },
-        {
-          "attack_name": "LGV",
-          "ASR": 0.985,
-          "queries": 0
-        },
-        {
-          "attack_name": "MBA",
-          "ASR": 0.988,
-          "queries": 0
-        },
-        {
-          "attack_name": "NaiveAvg",
-          "ASR": 0.996,
-          "queries": 1
-        },
-        {
-          "attack_name": "NaiveAvg10",
-          "ASR": 0.997,
-          "queries": 2
-        },
-        {
-          "attack_name": "SASD_WS",
-          "ASR": 0.992,
-          "queries": 0
-        },
-        {
-          "attack_name": "SVRE",
-          "ASR": 0.99,
-          "queries": 0
-        },
-        {
-          "attack_name": "SimbaODS",
-          "ASR": 0.183,
-          "queries": 7
+          "ASR": 0.0,
+          "queries": null
         }
       ]
     },
-    "\\vit{16}": {
-      "\\etero": [
+    "Mim-Sw-L": {
+      "HoS+R": [
         {
           "attack_name": "BASES",
-          "ASR": 0.73,
-          "queries": 6
+          "ASR": 0.0,
+          "queries": null
         },
         {
           "attack_name": "CWA",
-          "ASR": 0.602,
-          "queries": 0
+          "ASR": 0.0,
+          "queries": null
         },
         {
           "attack_name": "DSWEA",
-          "ASR": 0.76,
-          "queries": 4
+          "ASR": 0.0,
+          "queries": null
         },
         {
           "attack_name": "ENS",
-          "ASR": 0.402,
-          "queries": 0
+          "ASR": 0.0,
+          "queries": null
         },
         {
           "attack_name": "GAA",
-          "ASR": 0.557,
-          "queries": 6
+          "ASR": 0.0,
+          "queries": null
         },
         {
           "attack_name": "GFCS",
-          "ASR": 0.093,
-          "queries": 14
+          "ASR": 0.0,
+          "queries": null
         },
         {
           "attack_name": "LGV",
-          "ASR": 0.36,
-          "queries": 0
+          "ASR": 0.0,
+          "queries": null
         },
         {
           "attack_name": "MBA",
-          "ASR": 0.355,
-          "queries": 0
+          "ASR": 0.0,
+          "queries": null
         },
         {
           "attack_name": "NaiveAvg",
-          "ASR": 0.737,
-          "queries": 5
+          "ASR": 0.0,
+          "queries": null
         },
         {
           "attack_name": "NaiveAvg10",
-          "ASR": 0.739,
-          "queries": 5
+          "ASR": 0.0,
+          "queries": null
         },
         {
           "attack_name": "SASD_WS",
-          "ASR": 0.718,
-          "queries": 0
+          "ASR": 0.0,
+          "queries": null
         },
         {
           "attack_name": "SVRE",
-          "ASR": 0.563,
-          "queries": 0
+          "ASR": 0.0,
+          "queries": null
         },
         {
           "attack_name": "SimbaODS",
-          "ASR": 0.093,
-          "queries": 15
+          "ASR": 0.0,
+          "queries": null
         }
       ]
     },
-    "\\beit{16}": {
-      "\\omeo": [
+    "Pub-RN-50": {
+      "HoS+R": [
         {
           "attack_name": "BASES",
-          "ASR": 0.999,
-          "queries": 2
+          "ASR": 54.6,
+          "queries": 11.1
         },
         {
           "attack_name": "CWA",
-          "ASR": 0.99,
-          "queries": 0
+          "ASR": 29.0,
+          "queries": 0.0
         },
         {
           "attack_name": "DSWEA",
-          "ASR": 0.998,
-          "queries": 1
+          "ASR": 46.8,
+          "queries": 10.1
         },
         {
           "attack_name": "ENS",
-          "ASR": 0.936,
-          "queries": 0
+          "ASR": 6.1,
+          "queries": 0.0
         },
         {
           "attack_name": "GAA",
-          "ASR": 0.769,
-          "queries": 6
+          "ASR": 13.0,
+          "queries": 7.5
         },
         {
           "attack_name": "GFCS",
-          "ASR": 0.227,
-          "queries": 12
+          "ASR": 0.5,
+          "queries": 11.4
         },
         {
           "attack_name": "LGV",
-          "ASR": 0.934,
-          "queries": 0
+          "ASR": 6.4,
+          "queries": 0.0
         },
         {
           "attack_name": "MBA",
-          "ASR": 0.93,
-          "queries": 0
+          "ASR": 7.3,
+          "queries": 0.0
         },
         {
           "attack_name": "NaiveAvg",
-          "ASR": 0.996,
-          "queries": 1
+          "ASR": 55.7,
+          "queries": 8.7
         },
         {
           "attack_name": "NaiveAvg10",
-          "ASR": 0.999,
-          "queries": 2
+          "ASR": 56.4,
+          "queries": 10.4
         },
         {
           "attack_name": "SASD_WS",
-          "ASR": 0.99,
-          "queries": 0
+          "ASR": 59.8,
+          "queries": 0.0
         },
         {
           "attack_name": "SVRE",
-          "ASR": 0.983,
-          "queries": 0
+          "ASR": 14.0,
+          "queries": 0.0
         },
         {
           "attack_name": "SimbaODS",
-          "ASR": 0.191,
-          "queries": 16
-        }
-      ]
-    },
-    "\\peng": {
-      "\\robust": [
-        {
-          "attack_name": "BASES",
-          "ASR": 0.019,
-          "queries": 2
-        },
-        {
-          "attack_name": "CWA",
-          "ASR": 0.016,
-          "queries": 0
-        },
-        {
-          "attack_name": "DSWEA",
-          "ASR": 0.024,
-          "queries": 2
-        },
-        {
-          "attack_name": "ENS",
-          "ASR": 0.013,
-          "queries": 0
-        },
-        {
-          "attack_name": "GAA",
-          "ASR": 0.02,
-          "queries": 3
-        },
-        {
-          "attack_name": "GFCS",
-          "ASR": 0.019,
-          "queries": 3
-        },
-        {
-          "attack_name": "LGV",
-          "ASR": 0.017,
-          "queries": 0
-        },
-        {
-          "attack_name": "MBA",
-          "ASR": 0.014,
-          "queries": 0
-        },
-        {
-          "attack_name": "NaiveAvg",
-          "ASR": 0.018,
-          "queries": 5
-        },
-        {
-          "attack_name": "NaiveAvg10",
-          "ASR": 0.019,
-          "queries": 1
-        },
-        {
-          "attack_name": "SASD_WS",
-          "ASR": 0.018,
-          "queries": 0
-        },
-        {
-          "attack_name": "SVRE",
-          "ASR": 0.021,
-          "queries": 0
-        },
-        {
-          "attack_name": "SimbaODS",
-          "ASR": 0.019,
-          "queries": 4
+          "ASR": 0.3,
+          "queries": 29.7
         }
       ]
     }
