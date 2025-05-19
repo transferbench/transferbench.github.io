@@ -13,8 +13,8 @@
   <meta property="og:title" content="TransferBench" />
   <meta property="og:description" content="TransferBench: Benchmarking Ensemble-based Black-box Transfer Attacks" />
 
-  <meta http-equiv='cache-control' content='no-cache'> 
-  <meta http-equiv='expires' content='0'> 
+  <meta http-equiv='cache-control' content='no-cache'>
+  <meta http-equiv='expires' content='0'>
   <meta http-equiv='pragma' content='no-cache'>
 
   <meta property="article:publisher" content="https://transferbench.github./transferbench" />
@@ -400,8 +400,8 @@
           let alt = idx % 2;
           let $tr = $('<tr>');
           $tr.append($('<td>').addClass(alt ? 'tg-30first' : 'tg-30second').text(item.attack_name));
-          $tr.append($('<td>').addClass(alt ? 'tg-44first' : 'tg-44second').text(item.ASR.toFixed(4)));
-          $tr.append($('<td>').addClass(alt ? 'tg-44first' : 'tg-44second').text(item.queries));
+          $tr.append($('<td>').addClass(alt ? 'tg-44first' : 'tg-44second').text(item.ASR.toFixed(1)));
+          $tr.append($('<td>').addClass(alt ? 'tg-44first' : 'tg-44second').text(item.queries.toFixed(1)));
           tbody.append($tr);
         });
       }
