@@ -21,17 +21,19 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="TransferBench" />
   <meta name="twitter:description" content="TransferBench: Benchmarking Ensemble-based Black-box Transfer Attacks." />
-
-  <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+  <!--Uncomment to  add jvascript bakcground-->
+  <!--<script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
   <script language="javascript" type="text/javascript" src="sketch.js"></script>
-
+  --->
 
 </head>
 
 <body>
   <div class="container banner-container">
-    <div style="padding: 50px 0 0 0;">
-      <h2 class="text-center"><b>TransferBench</b> Benchmarking Ensemble-based Black-box Transfer Attacks</h2>
+    <div style="padding: 80px 0 0 0;">
+      <h1 class="text-center"><b>〶ransferBench</b> </h1>
+      <h2 class="text-center">
+        Benchmarking Ensemble-based Black-box Transfer Attacks</h2>
       <br>
       <div class="text-center">
         <!-- <img src="assets/fig_radar.svg" alt="Machiavelli" width="50%"/>-->
@@ -65,16 +67,6 @@
                 </a>
                 -->
         <div>
-          <a class="btn is-dark" role="button" href="#cifar-benchmark-section">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false"
-              data-prefix="fab" fill="currentColor" class="bi bi-table" viewBox="0 0 24 24"
-              style="width:24px;height:24px;margin-left:-12px;margin-right:12px" data-fa-i2svg="">
-              <path
-                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z">
-              </path>
-            </svg>
-            Leaderboard CIFAR-10
-          </a>
           <a class="btn is-dark" role="button" href="#imagenet-benchmark-section">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false"
               data-prefix="fab" fill="currentColor" class="bi bi-table" viewBox="0 0 24 24"
@@ -84,6 +76,16 @@
               </path>
             </svg>
             Leaderboard ImageNet
+          </a>
+          <a class="btn is-dark" role="button" href="#cifar-benchmark-section">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false"
+              data-prefix="fab" fill="currentColor" class="bi bi-table" viewBox="0 0 24 24"
+              style="width:24px;height:24px;margin-left:-12px;margin-right:12px" data-fa-i2svg="">
+              <path
+                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z">
+              </path>
+            </svg>
+            Leaderboard CIFAR-10
           </a>
         </div>
       </div>
@@ -141,7 +143,7 @@
         </div>
         <div class="col-md-3">
           <p class="stat">6</p>
-          <p class="statlabel">Surrogate Pools</p>
+          <p class="statlabel">Scenarios</p>
         </div>
 
       </div>
@@ -152,17 +154,47 @@
       <div class="row">
         <h2>Leaderboard</h2>
         <div class="mt-2 col-md-12">
-          <p> For ImageNet, we evaluate transferability across 8 victim models starting from three different surrogate
-            pools.
-            In the <code>HeteroPool</code> setting, we include:
-            The <code>HomeoPool</code> setting :
-            Finally, the <code>RobustPool</code> setting includes robust victim models :</p>
+          <p> For ImageNet, we evaluate transferability across 8 victim models starting from three different scenarios.
+            In the <code>Heterogeneous </code> setting, we include:
+            The <code>Homeogeneous</code> setting :
+            Finally, the <code>Robust+Homogeneous</code> setting includes robust victim models :</p>
         </div>
       </div>
       <div class="row">
+        <!-- ImageNet section -->
+        <section id="imagenet-benchmark-section" class="col-md-6">
+          <h2>ImageNet</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" id="dropdownModel-imagenet"
+                  data-toggle="dropdown">Victim model</button>
+                <div class="dropdown-menu" id="victim-list-imagenet"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" id="dropdownPool-imagenet"
+                  data-toggle="dropdown">Surrogate pool</button>
+                <div class="dropdown-menu" id="pool-list-imagenet"></div>
+              </div>
+            </div>
+          </div>
+          <table class="tg" style="width:100%">
+            <thead>
+              <tr>
+                <th>Attack</th>
+                <th id="ASR-imagenet">ASR (%) <span class="filter-symbol-imagenet">&#x25B2;</span></th>
+                <th id="queries-imagenet">#Queries <span class="filter-symbol-imagenet">&#x25B2;</span></th>
+              </tr>
+            </thead>
+            <tbody class="benchmark-imagenet"></tbody>
+          </table>
+          <ul class="pagination pagination-imagenet justify-content-end"></ul>
+        </section>
         <!-- CIFAR-10 section -->
         <section id="cifar-benchmark-section" class="col-md-6">
-          <h2>CIFAR-10 Benchmark</h2>
+          <h2>CIFAR-10</h2>
           <div class="row">
             <div class="col-md-6">
               <div class="dropdown">
@@ -192,37 +224,7 @@
           <ul class="pagination pagination-cifar justify-content-end"></ul>
         </section>
 
-        <!-- ImageNet section -->
-        <section id="imagenet-benchmark-section" class="col-md-6">
-          <h2>ImageNet Benchmark</h2>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" id="dropdownModel-imagenet"
-                  data-toggle="dropdown">Victim model</button>
-                <div class="dropdown-menu" id="victim-list-imagenet"></div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" id="dropdownPool-imagenet"
-                  data-toggle="dropdown">Surrogate pool</button>
-                <div class="dropdown-menu" id="pool-list-imagenet"></div>
-              </div>
-            </div>
-          </div>
-          <table class="tg" style="width:100%">
-            <thead>
-              <tr>
-                <th>Attack</th>
-                <th id="ASR-imagenet">ASR (%) <span class="filter-symbol-imagenet">&#x25B2;</span></th>
-                <th id="queries-imagenet">#Queries <span class="filter-symbol-imagenet">&#x25B2;</span></th>
-              </tr>
-            </thead>
-            <tbody class="benchmark-imagenet"></tbody>
-          </table>
-          <ul class="pagination pagination-imagenet justify-content-end"></ul>
-        </section>
+
       </div>
 
 
