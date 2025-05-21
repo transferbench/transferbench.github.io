@@ -529,3 +529,11 @@ hr.divider {
     color: black;
     transform: rotate(90deg);
 }
+
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: darkorange;
+    border-color: darkorange;
+}
