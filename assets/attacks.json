@@ -1,0 +1,68 @@
+{
+    "GAA": {
+        "authors": "Yang et al.",
+        "year": 2024,
+        "paper-link": "https://www.sciencedirect.com/science/article/pii/S0020025524009277"
+    },
+    "BASES": {
+        "authors": "Cai et al.",
+        "year": 2022,
+        "paper-link": "https://arxiv.org/abs/2208.03610"
+    },
+    "CWA": {
+        "authors": "Chen et al.",
+        "year": 2024,
+        "paper-link": "https://proceedings.iclr.cc/paper_files/paper/2024/file/53fe824f289060ce705ed7c01dae59d2-Paper-Conference.pdf"
+    },
+    "DSWEA": {
+        "authors": "Hu et al.",
+        "year": 2025,
+        "paper-link": "https://www.sciencedirect.com/science/article/pii/S0031320324010148"
+    },
+    "ENS": {
+        "authors": "Liu et al.",
+        "year": 2017,
+        "paper-link": "https://arxiv.org/abs/1611.02770"
+    },
+    "GFCS": {
+        "authors": "Lord et al.",
+        "year": 2022,
+        "paper-link": "https://arxiv.org/abs/2203.08725"
+    },
+    "LGV": {
+        "authors": "Gubri et al.",
+        "year": 2022,
+        "paper-link": "https://arxiv.org/abs/2207.13129"
+    },
+    "MBA":{
+        "authors": "Li et al.",
+        "year": 2023,
+        "paper-link": "https://arxiv.org/abs/2302.05086"
+    },
+    "SASD_WS": {
+        "authors": "Wu et al.",
+        "year": 2024,
+        "paper-link": "https://openaccess.thecvf.com/content/CVPR2024/papers/Wu_Improving_Transferable_Targeted_Adversarial_Attacks_with_Model_Self-Enhancement_CVPR_2024_paper.pdf"
+    },
+    "SVRE": {
+        "authors": "Xiong et al.",
+        "year": 2020,
+        "paper-link": "https://arxiv.org/pdf/2111.10752"
+    },
+    "SimbaODS": {
+        "authors": "Trashiro et al.",
+        "year": 2020,
+        "paper-link": "https://proceedings.neurips.cc/paper_files/paper/2020/file/30da227c6b5b9e2482b6b221c711edfd-Paper.pdf"
+    },
+    "NaiveAvg": {
+        "authors": "Brau et al.",
+        "year": 2025,
+        "paper-link": "https://openreview.net/pdf?id=uT0A1pjBqu"
+    },
+    "NaiveAvg10": {
+        "authors": "Brau et al.",
+        "year": 2025,
+        "paper-link": "https://openreview.net/pdf?id=uT0A1pjBqu"
+    }
+
+}

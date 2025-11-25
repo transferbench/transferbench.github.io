@@ -278,12 +278,14 @@
 
         <div class="col-sm-3">
           <h5 class="text-center"><a class="text-center" href="https://www.lucaoneto.com/home">Luca Oneto</a></h5>
-          <div class="text-center">University of Cagliari</div>
+          <div class="text-center">University of Genoa</div>
         </div>
 
         <div class="col-sm-3">
           <h5 class="text-center"><a href="https://www.saiferlab.ai/people/fabioroli">Fabio Roli</a></h5>
           <div class="text-center">University of Genoa</div>
+          <div class="text-center">University of Cagliari</div>
+
         </div>
 
         <div class="col-sm-3">
@@ -366,7 +368,7 @@
       const tbody = $(`.benchmark-${prefix}`);
       const pagination = $(`.pagination-${prefix}`);
       const filterCols = { ASR: false, queries: false };
-      let fullData, victim, pool, tableData, page = 1, pageSize = 15, totalPages = 1;
+      let fullData, victim, pool, tableData, page = 1, pageSize = 15, totalPages = 1, attacksMeta = {};
 
       function renderMathJax() {
         MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
@@ -376,9 +378,15 @@
         $btn.text(text);
       }
 
+      function modelHasData(m) {
+        const pools = fullData[m] || {};
+        return Object.keys(pools).some(p => Array.isArray(pools[p]) && pools[p].length > 0);
+      }
+
       function populateModelDropdown() {
         modelMenu.empty();
         Object.keys(fullData).forEach(m => {
+          if (!modelHasData(m)) return; // skip models with no scenarios
           $('<button>').addClass('dropdown-item')
             .attr('type', 'button')
             .data('model', m)
@@ -387,9 +395,16 @@
         });
       }
 
+      function poolHasData(v, p) {
+        const arr = (fullData[v] && fullData[v][p]);
+        return Array.isArray(arr) && arr.length > 0;
+      }
+
       function populatePoolDropdown() {
         poolMenu.empty();
-        Object.keys(fullData[victim]).forEach(p => {
+        const pools = Object.keys(fullData[victim] || {});
+        pools.forEach(p => {
+          if (!poolHasData(victim, p)) return; // skip empty pools
           $('<button>').addClass('dropdown-item')
             .attr('type', 'button')
             .data('pool', p)
@@ -414,9 +429,43 @@
         tableData.slice(start, end).forEach((item, idx) => {
           let alt = idx % 2;
           let $tr = $('<tr>');
-          $tr.append($('<td>').addClass(alt ? 'tg-30first' : 'tg-30second').text(item.attack_name));
-          $tr.append($('<td>').addClass(alt ? 'tg-44first' : 'tg-44second').text(item.ASR.toFixed(1)));
-          $tr.append($('<td>').addClass(alt ? 'tg-44first' : 'tg-44second').text(item.queries.toFixed(1)));
+          // lookup metadata for this attack_name and format: "NAME (authors, year)"
+          let meta = attacksMeta[item.attack_name];
+          let displayText = item.attack_name;
+          if (meta) {
+            let authors = meta.authors || '';
+            let year = meta.year || '';
+            if (authors || year) {
+              displayText += ' (' + [authors, year].filter(Boolean).join(', ') + ')';
+            }
+          }
+
+          // create the cell; if a paper-link exists, link only the attack name
+          let $td = $('<td>').addClass(alt ? 'tg-30first' : 'tg-30second');
+          let authors = meta ? (meta.authors || '') : '';
+          let year = meta ? (meta.year || '') : '';
+          let authorsYearText = (authors || year) ? ' (' + [authors, year].filter(Boolean).join(', ') + ')' : '';
+          
+          if (meta && meta['paper-link']) {
+            let $a = $('<a>')
+              .attr('href', meta['paper-link'])
+              .attr('target', '_blank')
+              .attr('rel', 'noopener noreferrer')
+              .text(item.attack_name);
+            $td.append($a);
+            if (authorsYearText) {
+              $td.append(document.createTextNode(authorsYearText));
+            }
+          } else {
+            $td.text(item.attack_name + authorsYearText);
+          }
+
+          $tr.append($td);
+          // safely format ASR and queries (handle null/undefined)
+          const asrText = (typeof item.queries === 'number') ? item.ASR.toFixed(1) : '—';
+          const queriesText = (typeof item.queries === 'number') ? item.queries.toFixed(1) : '—';
+          $tr.append($('<td>').addClass(alt ? 'tg-44first' : 'tg-44second').text(asrText));
+          $tr.append($('<td>').addClass(alt ? 'tg-44first' : 'tg-44second').text(queriesText));
           tbody.append($tr);
         });
       }
@@ -432,26 +481,32 @@
 
       function sortColumn(col) {
         tableData.sort((a, b) => {
-          let A = col === 'queries'
-            ? (a.queries)
-            : a[col];
-          let B = col === 'queries'
-            ? (b.queries)
-            : b[col];
-          return filterCols[col] ? A - B : B - A;
+          // Normalize missing values to a numeric sentinel to avoid NaN comparator results
+          const normalize = (val) => (typeof val === 'number' && !isNaN(val) ? val : Number.NEGATIVE_INFINITY);
+          let A = col === 'queries' ? normalize(a.queries) : normalize(a[col]);
+          let B = col === 'queries' ? normalize(b.queries) : normalize(b[col]);
+          const diff = A - B;
+          return filterCols[col] ? diff : -diff;
         });
       }
 
-      // fetch data once
-      $.getJSON(jsonPath, all => {
-        fullData = all[dataKey];
-        // pick defaults
-        victim = Object.keys(fullData)[0];
-        pool = Object.keys(fullData[victim])[0];
-        updateDropdown(modelBtn, `Victim model: ${victim}`);
-        updateDropdown(poolBtn, `Surrogate pool: ${pool}`);
-        populateModelDropdown();
-        loadData();
+      // fetch data once and also fetch attacks metadata
+      $.getJSON('assets/attacks.json', meta => {
+        attacksMeta = meta || {};
+        // once metadata is loaded, fetch the main data
+        $.getJSON(jsonPath, all => {
+          fullData = all[dataKey];
+          // pick defaults: choose first model/pool that actually has data
+          const models = Object.keys(fullData || {});
+          victim = models.find(m => modelHasData(m)) || models[0];
+          const pools = victim ? Object.keys(fullData[victim] || {}) : [];
+          pool = pools.find(p => poolHasData(victim, p)) || pools[0];
+          updateDropdown(modelBtn, `Victim model: ${victim}`);
+          updateDropdown(poolBtn, `Surrogate pool: ${pool}`);
+          populateModelDropdown();
+          populatePoolDropdown();
+          loadData();
+        });
       });
 
       // event handlers
@@ -459,7 +514,9 @@
         e.preventDefault();
         victim = $(e.currentTarget).data('model');
         updateDropdown(modelBtn, `Victim model: ${victim}`);
-        pool = Object.keys(fullData[victim])[0];
+        // pick first pool with data for the newly selected victim
+        const poolsForVictim = Object.keys(fullData[victim] || {});
+        pool = poolsForVictim.find(p => poolHasData(victim, p)) || poolsForVictim[0];
         updateDropdown(poolBtn, `Surrogate pool: ${pool}`);
         page = 1; loadData();
       });
