@@ -174,39 +174,8 @@
         </div>
       </div>
       <div class="row">
-        <!-- ImageNet section -->
-        <section id="imagenet-benchmark-section" class="col-md-6">
-          <h2>ImageNet</h2>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" id="dropdownModel-imagenet"
-                  data-toggle="dropdown">Victim model</button>
-                <div class="dropdown-menu" id="victim-list-imagenet"></div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" id="dropdownPool-imagenet"
-                  data-toggle="dropdown">Surrogate pool</button>
-                <div class="dropdown-menu" id="pool-list-imagenet"></div>
-              </div>
-            </div>
-          </div>
-          <table class="tg" style="width:100%">
-            <thead>
-              <tr>
-                <th>Attack</th>
-                <th id="ASR-imagenet">ASR (%) <span class="filter-symbol-imagenet">&#x25B2;</span></th>
-                <th id="queries-imagenet">#Queries <span class="filter-symbol-imagenet">&#x25B2;</span></th>
-              </tr>
-            </thead>
-            <tbody class="benchmark-imagenet"></tbody>
-          </table>
-          <ul class="pagination pagination-imagenet justify-content-end"></ul>
-        </section>
         <!-- CIFAR-10 section -->
-        <section id="cifar-benchmark-section" class="col-md-6">
+        <section id="cifar-benchmark-section" class="col-md-12">
           <h2>CIFAR-10</h2>
           <div class="row">
             <div class="col-md-6">
@@ -236,8 +205,39 @@
           </table>
           <ul class="pagination pagination-cifar justify-content-end"></ul>
         </section>
-
-
+    </div>
+        <div class="row">
+        <!-- ImageNet section -->
+        <section id="imagenet-benchmark-section" class="col-md-12">
+          <h2>ImageNet</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" id="dropdownModel-imagenet"
+                  data-toggle="dropdown">Victim model</button>
+                <div class="dropdown-menu" id="victim-list-imagenet"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" id="dropdownPool-imagenet"
+                  data-toggle="dropdown">Surrogate pool</button>
+                <div class="dropdown-menu" id="pool-list-imagenet"></div>
+              </div>
+            </div>
+          </div>
+          <table class="tg" style="width:100%">
+            <thead>
+              <tr>
+                <th>Attack</th>
+                <th id="ASR-imagenet">ASR (%) <span class="filter-symbol-imagenet">&#x25B2;</span></th>
+                <th id="queries-imagenet">#Queries <span class="filter-symbol-imagenet">&#x25B2;</span></th>
+              </tr>
+            </thead>
+            <tbody class="benchmark-imagenet"></tbody>
+          </table>
+          <ul class="pagination pagination-imagenet justify-content-end"></ul>
+        </section>
       </div>
 
 
@@ -367,7 +367,7 @@
   </script>
   <script>
     // script for leaderboard
-    // generic initializer
+    // generic initializer: renders ASR and #Queries columns for each victim model supporting the selected surrogate pool
     function initBenchmark({ prefix, dataKey, jsonPath }) {
       const modelBtn = $(`#dropdownModel-${prefix}`);
       const modelMenu = $(`#victim-list-${prefix}`);
@@ -376,7 +376,8 @@
       const tbody = $(`.benchmark-${prefix}`);
       const pagination = $(`.pagination-${prefix}`);
       const filterCols = { ASR: false, queries: false };
-      let fullData, victim, pool, tableData, page = 1, pageSize = 15, totalPages = 1, attacksMeta = {};
+      let fullData, pool, page = 1, pageSize = 15, totalPages = 1, attacksMeta = {}, attacksList = [], modelsForPool = [];
+      const sortState = {}; // track sort state per model and column
 
       function renderMathJax() {
         MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
@@ -386,33 +387,29 @@
         $btn.text(text);
       }
 
-      function modelHasData(m) {
-        const pools = fullData[m] || {};
-        return Object.keys(pools).some(p => Array.isArray(pools[p]) && pools[p].length > 0);
-      }
-
-      function populateModelDropdown() {
-        modelMenu.empty();
-        Object.keys(fullData).forEach(m => {
-          if (!modelHasData(m)) return; // skip models with no scenarios
-          $('<button>').addClass('dropdown-item')
-            .attr('type', 'button')
-            .data('model', m)
-            .text(m)
-            .appendTo(modelMenu);
-        });
-      }
-
-      function poolHasData(v, p) {
-        const arr = (fullData[v] && fullData[v][p]);
+      function poolHasData(m, p) {
+        const arr = (fullData[m] && fullData[m][p]);
         return Array.isArray(arr) && arr.length > 0;
+      }
+
+      function getAllPools() {
+        const set = new Set();
+        Object.keys(fullData || {}).forEach(m => {
+          Object.keys(fullData[m] || {}).forEach(p => {
+            if (poolHasData(m, p)) set.add(p);
+          });
+        });
+        return Array.from(set);
+      }
+
+      function getModelsForPool(p) {
+        return Object.keys(fullData || {}).filter(m => poolHasData(m, p));
       }
 
       function populatePoolDropdown() {
         poolMenu.empty();
-        const pools = Object.keys(fullData[victim] || {});
+        const pools = getAllPools();
         pools.forEach(p => {
-          if (!poolHasData(victim, p)) return; // skip empty pools
           $('<button>').addClass('dropdown-item')
             .attr('type', 'button')
             .data('pool', p)
@@ -421,25 +418,83 @@
         });
       }
 
+      function buildTableHeader() {
+        const thead = $('<thead>');
+        const top = $('<tr>');
+        top.append($('<th>').attr('rowspan', 2).text('Attack'));
+        modelsForPool.forEach(m => {
+          top.append($('<th>').attr('colspan', 2).text(m));
+        });
+        const second = $('<tr>');
+        modelsForPool.forEach((m, idx) => {
+          const colIdx = idx * 2 + 2; // +2 because first column is Attack
+          second.append($('<th>').addClass('sortable-header').attr('data-col', 'ASR').attr('data-model-idx', idx).text('ASR (%) ').append($('<span>').addClass(`filter-symbol-${prefix}`).html('&#x25B2;')));
+          second.append($('<th>').addClass('sortable-header').attr('data-col', 'queries').attr('data-model-idx', idx).text('#Queries ').append($('<span>').addClass(`filter-symbol-${prefix}`).html('&#x25B2;')));
+        });
+        thead.append(top).append(second);
+        // replace existing thead
+        $(`table.tg`).filter((i, el) => $(el).closest('section').attr('id') === `${prefix}-benchmark-section`).find('thead').remove();
+        $(`table.tg`).filter((i, el) => $(el).closest('section').attr('id') === `${prefix}-benchmark-section`).prepend(thead);
+      }
+
+      function buildAttacksList() {
+        const seen = new Set();
+        const list = [];
+        // preserve ordering by iterating models and their arrays
+        modelsForPool.forEach(m => {
+          (fullData[m][pool] || []).forEach(item => {
+            if (!seen.has(item.attack_name)) {
+              seen.add(item.attack_name);
+              list.push(item.attack_name);
+            }
+          });
+        });
+        return list;
+      }
+
       function loadData() {
-        tableData = fullData[victim][pool];
-        totalPages = Math.ceil(tableData.length / pageSize);
-        sortColumn('ASR');
+        modelsForPool = getModelsForPool(pool);
+        attacksList = buildAttacksList();
+        // initialize sort state for all columns (false = descending by default)
+        modelsForPool.forEach((m, idx) => {
+          sortState[`${idx}-ASR`] = false;
+          sortState[`${idx}-queries`] = false;
+        });
+        totalPages = Math.max(1, Math.ceil(attacksList.length / pageSize));
+        buildTableHeader();
+        sortAttacksList('ASR', 0);
         renderTable();
         renderPagination();
+        attachSortHandlers();
         renderMathJax();
         populatePoolDropdown();
+      }
+
+      function attachSortHandlers() {
+        $(`.benchmark-${prefix}`).closest('table').find('thead').off('click', '.sortable-header').on('click', '.sortable-header', function() {
+          const col = $(this).data('col');
+          const modelIdx = parseInt($(this).data('model-idx'));
+          const key = `${modelIdx}-${col}`;
+          // toggle between false (descending) and true (ascending)
+          sortState[key] = !sortState[key];
+          sortAttacksList(col, modelIdx);
+          page = 1;
+          renderTable();
+          renderPagination();
+          // update symbol for this specific header
+          $(this).find(`.filter-symbol-${prefix}`).html(sortState[key] ? '&#x25B2;' : '&#x25BC;');
+        });
       }
 
       function renderTable() {
         tbody.empty();
         let start = (page - 1) * pageSize, end = start + pageSize;
-        tableData.slice(start, end).forEach((item, idx) => {
+        attacksList.slice(start, end).forEach((attackName, idx) => {
           let alt = idx % 2;
           let $tr = $('<tr>');
           // lookup metadata for this attack_name and format: "NAME (authors, year)"
-          let meta = attacksMeta[item.attack_name];
-          let displayText = item.attack_name;
+          let meta = attacksMeta[attackName];
+          let displayText = attackName;
           if (meta) {
             let authors = meta.authors || '';
             let year = meta.year || '';
@@ -448,33 +503,48 @@
             }
           }
 
-          // create the cell; if a paper-link exists, link only the attack name
           let $td = $('<td>').addClass(alt ? 'tg-30first' : 'tg-30second');
-          let authors = meta ? (meta.authors || '') : '';
-          let year = meta ? (meta.year || '') : '';
-          let authorsYearText = (authors || year) ? ' (' + [authors, year].filter(Boolean).join(', ') + ')' : '';
-          
           if (meta && meta['paper-link']) {
-            let $a = $('<a>')
-              .attr('href', meta['paper-link'])
-              .attr('target', '_blank')
-              .attr('rel', 'noopener noreferrer')
-              .text(item.attack_name);
+            let $a = $('<a>').attr('href', meta['paper-link']).attr('target', '_blank').attr('rel', 'noopener noreferrer').text(attackName);
             $td.append($a);
-            if (authorsYearText) {
-              $td.append(document.createTextNode(authorsYearText));
-            }
+            if (meta.authors || meta.year) $td.append(document.createTextNode(' (' + [meta.authors, meta.year].filter(Boolean).join(', ') + ')'));
           } else {
-            $td.text(item.attack_name + authorsYearText);
+            $td.text(displayText);
           }
-
           $tr.append($td);
-          // safely format ASR and queries (handle null/undefined)
-          const asrText = (typeof item.queries === 'number') ? item.ASR.toFixed(1) : '—';
-          const queriesText = (typeof item.queries === 'number') ? item.queries.toFixed(1) : '—';
-          $tr.append($('<td>').addClass(alt ? 'tg-44first' : 'tg-44second').text(asrText));
-          $tr.append($('<td>').addClass(alt ? 'tg-44first' : 'tg-44second').text(queriesText));
+
+          // for each model, append ASR and queries cells
+          modelsForPool.forEach(m => {
+            const arr = fullData[m][pool] || [];
+            const item = arr.find(it => it.attack_name === attackName);
+            const asrText = (item && typeof item.ASR === 'number') ? item.ASR.toFixed(1) : '—';
+            const queriesText = (item && typeof item.queries === 'number') ? item.queries.toFixed(1) : '—';
+            $tr.append($('<td>').addClass(alt ? 'tg-44first' : 'tg-44second').text(asrText));
+            $tr.append($('<td>').addClass(alt ? 'tg-44first' : 'tg-44second').text(queriesText));
+          });
+
           tbody.append($tr);
+        });
+      }
+
+      function sortAttacksList(col, modelIdx) {
+        // col is 'ASR' or 'queries'; modelIdx is which model to sort by
+        const model = modelsForPool[modelIdx];
+        const key = `${modelIdx}-${col}`;
+        const isAscending = sortState[key]; // true = ascending, false = descending
+        
+        attacksList.sort((a, b) => {
+          const arrA = fullData[model][pool] || [];
+          const arrB = fullData[model][pool] || [];
+          const itemA = arrA.find(it => it.attack_name === a);
+          const itemB = arrB.find(it => it.attack_name === b);
+          
+          const normalize = (val) => (typeof val === 'number' && !isNaN(val) ? val : Number.NEGATIVE_INFINITY);
+          let valA = col === 'queries' ? normalize(itemA?.queries) : normalize(itemA?.[col]);
+          let valB = col === 'queries' ? normalize(itemB?.queries) : normalize(itemB?.[col]);
+          
+          const diff = valA - valB;
+          return isAscending ? diff : -diff;
         });
       }
 
@@ -487,48 +557,25 @@
         }
       }
 
-      function sortColumn(col) {
-        tableData.sort((a, b) => {
-          // Normalize missing values to a numeric sentinel to avoid NaN comparator results
-          const normalize = (val) => (typeof val === 'number' && !isNaN(val) ? val : Number.NEGATIVE_INFINITY);
-          let A = col === 'queries' ? normalize(a.queries) : normalize(a[col]);
-          let B = col === 'queries' ? normalize(b.queries) : normalize(b[col]);
-          const diff = A - B;
-          return filterCols[col] ? diff : -diff;
-        });
-      }
-
       // fetch data once and also fetch attacks metadata
       $.getJSON('assets/attacks.json', meta => {
         attacksMeta = meta || {};
         // once metadata is loaded, fetch the main data
         $.getJSON(jsonPath, all => {
           fullData = all[dataKey];
-          // pick defaults: choose first model/pool that actually has data
-          const models = Object.keys(fullData || {});
-          victim = models.find(m => modelHasData(m)) || models[0];
-          const pools = victim ? Object.keys(fullData[victim] || {}) : [];
-          pool = pools.find(p => poolHasData(victim, p)) || pools[0];
-          updateDropdown(modelBtn, `Victim model: ${victim}`);
+          // pick defaults: choose first pool that exists across any model
+          const pools = getAllPools();
+          pool = pools[0];
           updateDropdown(poolBtn, `Surrogate pool: ${pool}`);
-          populateModelDropdown();
           populatePoolDropdown();
           loadData();
         });
       });
 
-      // event handlers
-      modelMenu.on('click', '.dropdown-item', e => {
-        e.preventDefault();
-        victim = $(e.currentTarget).data('model');
-        updateDropdown(modelBtn, `Victim model: ${victim}`);
-        // pick first pool with data for the newly selected victim
-        const poolsForVictim = Object.keys(fullData[victim] || {});
-        pool = poolsForVictim.find(p => poolHasData(victim, p)) || poolsForVictim[0];
-        updateDropdown(poolBtn, `Surrogate pool: ${pool}`);
-        page = 1; loadData();
-      });
+      // model selector is no longer used as primary UI; keep it hidden but functional if needed
+      if (modelBtn) modelBtn.closest('.col-md-6').hide();
 
+      // event handlers
       poolMenu.on('click', '.dropdown-item', e => {
         e.preventDefault();
         pool = $(e.currentTarget).data('pool');
@@ -540,15 +587,6 @@
         e.preventDefault();
         page = +$(e.currentTarget).text();
         renderTable(); renderPagination();
-      });
-
-      // header sorting
-      $(`#ASR-${prefix},#queries-${prefix}`).on('click', function () {
-        let col = $(this).attr('id').split('-')[0];
-        filterCols[col] = !filterCols[col];
-        sortColumn(col);
-        renderTable(); renderPagination();
-        $(this).find('.filter-symbol-' + prefix).html(filterCols[col] ? '&#x25BC;' : '&#x25B2;');
       });
     }
 

@@ -342,8 +342,14 @@ hr.divider {
     overflow: hidden;
     padding: 4px 2px;
     word-break: normal;
+    text-align: center; 
+    vertical-align: middle;
 }
 
+td {
+    text-align: center; 
+    vertical-align: middle;
+}
 .tg th {
     background-color: #f0f0f0;
     border-bottom-width: 1px;
@@ -357,6 +363,15 @@ hr.divider {
     overflow: hidden;
     padding: 5px 10px;
     word-break: normal;
+}
+
+/* Center metric columns (ASR and #Queries) across dynamic multi-model tables.
+   Keep the first column (Attack name) left-aligned for readability. */
+.tg th, .tg td {
+    text-align: center;
+}
+.tg th:first-child, .tg td:first-child {
+    text-align: left;
 }
 
 .tg .tg-wa1i {
@@ -446,14 +461,14 @@ hr.divider {
 
 .tg .tg-44first {
     background-color: #F3F3F3;
-    text-align: center;
+    text-align: center !important;
     vertical-align: center;
     font-size: var(--textscale);
 }
 
 .tg .tg-44second {
     background-color: #FFF;
-    text-align: center;
+    text-align: center !important;
     vertical-align: bottom;
     font-size: var(--textscale);
 }
@@ -473,9 +488,8 @@ hr.divider {
 }
 
 .col-md-12 a {
-    color: orange;
-    text-decoration: none;
-    /* optional: removes underline */
+    color: rgb(215, 120, 4);
+    /* optional: for hover effect */
 }
 
 .col-md-12 a:hover {
